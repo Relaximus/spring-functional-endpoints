@@ -20,12 +20,10 @@ class DemoApplication {
 
 //	@Bean
 //	public RouterFunction<ServerResponse> routerFunction() {
-//		PersonHandler handler = new PersonHandler();
-//
 //		return route()
-//				.GET("/person/{id}", accept(APPLICATION_JSON), handler::getPerson)
-//				.GET("/person", accept(APPLICATION_JSON), handler::listPeople)
-//				.POST("/person", handler::createPerson)
+//				.GET("/person/{id}", accept(APPLICATION_JSON), PersonHandler::getPersonFor)
+//				.GET("/person", accept(APPLICATION_JSON), PersonHandler.listPeople())
+//				.POST("/person", PersonHandler::createPersonFrom)
 //				.build();
 //	}
 }

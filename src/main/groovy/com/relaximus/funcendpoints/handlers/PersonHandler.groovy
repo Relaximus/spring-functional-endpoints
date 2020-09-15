@@ -9,15 +9,19 @@ import static org.springframework.http.MediaType.APPLICATION_JSON;
 class PersonHandler {
 
     static HandlerFunction<ServerResponse> listPeople() {
-        List<Person> people  = [
+        List<Person> people = [
                 Person.builder()
                         .name("Alex")
                         .birthDate(new Date())
                         .hobbies(List.of("skiing", "tennis"))
-                            .build()
+                        .build()
         ];
 
-        return { ServerRequest request -> ServerResponse.ok().contentType(APPLICATION_JSON).body(people) }
+        { ServerRequest request ->
+            ServerResponse.ok()
+                    .contentType(APPLICATION_JSON)
+                    .body(people)
+        }
     }
 
     static ServerResponse createPersonFrom(ServerRequest request) {
